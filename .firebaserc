@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "proyectoplexus": {
+      "hosting": {
+        "proyectoPlexus": [
+          "proyectoplexus"
+        ]
+      }
+    }
+  }
+}

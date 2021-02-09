@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.15fr 1fr 1fr 0.15fr;
+    grid-template-rows: 1fr 1fr 0.15fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". cards cards ."
+      ". cards cards ."
+      ". . . .";
+  }
+
+  .cards { grid-area: cards; }

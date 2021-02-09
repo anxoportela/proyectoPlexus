@@ -1,0 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.15fr;
+    gap: 10px 10px;
+    grid-template-areas:
+      "recomendados . ofertas"
+      "recomendados buscador ofertas"
+      "recomendados buscador ofertas"
+      "recomendados . ofertas"
+      ". . .";
+  }
+
+  .buscador {
+    grid-area: buscador;
+    display: flex;
+    justify-content: center;
+  }
+
+  .recomendados {
+    grid-area: recomendados;
+  }
+
+  .ofertas {
+    grid-area: ofertas;
+  }
+
