@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import datosEjemplo from '../../../assets/data.json';
 
 @Component({
   selector: 'app-alojamientos',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlojamientosComponent implements OnInit {
 
+  Datos: any = datosEjemplo;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

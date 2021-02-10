@@ -1,13 +1,15 @@
-<h2>Recomendados</h2>
-<div class="grid-wrapper">
-<div class="card text-center">
-    <img class="card-img-top" src="https://via.placeholder.com/600x600?text=Recomendado" alt="Card image">
-    <div class="card-header">
-        Título recomendación
+<div class="container">
+
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let item of Datos">
+      <div class="wrapper">
+        <img [src]="item.imagen" alt="Random first slide">
       </div>
-    <div class="card-body">
-      <p class="card-text">Descripción de la recomendación.</p>
-      <a href="#" class="btn btn-secondary stretched-link">Visitar</a>
-    </div>
-  </div>
+      <div class="carousel-caption">
+        <h3>{{ item.titulo }}</h3>
+        <p> {{ item.descripcion }} </p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
 </div>
