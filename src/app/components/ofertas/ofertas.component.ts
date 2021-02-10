@@ -5,17 +5,14 @@ import datosEjemplo from '../../../assets/data.json';
 @Component({
   selector: 'app-ofertas',
   templateUrl: './ofertas.component.html',
-  styleUrls: ['./ofertas.component.css']
+  styleUrls: ['./ofertas.component.css'],
 })
 export class OfertasComponent implements OnInit {
-
   Datos: any = datosEjemplo;
   icFi = faArrowLeft;
   icFd = faArrowRight;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

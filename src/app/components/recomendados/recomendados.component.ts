@@ -8,12 +8,9 @@ import datosEjemplo from '../../../assets/data.json';
   styleUrls: ['./recomendados.component.css'],
 })
 export class RecomendadosComponent implements OnInit {
-
   Datos: any = datosEjemplo;
   icFi = faArrowLeft;
   icFd = faArrowRight;
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

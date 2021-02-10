@@ -24,16 +24,16 @@ import { InicioComponent } from './components/inicio/inicio.component';
     OfertasComponent,
     RecomendadosComponent,
     AlojamientosComponent,
-    InicioComponent
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

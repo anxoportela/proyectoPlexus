@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
   icIns = faInstagram;
   icMail = faEnvelope;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

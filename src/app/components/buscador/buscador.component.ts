@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import {faCalendar} from '@fortawesome/free-solid-svg-icons';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
-  styleUrls: ['./buscador.component.css']
+  styleUrls: ['./buscador.component.css'],
 })
-
 export class BuscadorComponent implements OnInit {
   model: NgbDateStruct;
   iconCal = faCalendar;
@@ -16,9 +15,7 @@ export class BuscadorComponent implements OnInit {
   valueChanged(e) {
     this.rangevalue = e.target.value;
   }
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
