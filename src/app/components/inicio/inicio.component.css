@@ -24,3 +24,30 @@
 .ofertas {
   grid-area: ofertas;
 }
+
+@media only screen and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+      "buscador buscador buscador buscador"
+      "recomendados recomendados ofertas ofertas"
+      "recomendados recomendados ofertas ofertas"
+      "recomendados recomendados ofertas ofertas"
+      ". . . .";
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.15fr;
+    grid-template-areas:
+      "buscador buscador buscador buscador"
+      "ofertas ofertas ofertas ofertas"
+      "ofertas ofertas ofertas ofertas"
+      "recomendados recomendados recomendados recomendados"
+      "recomendados recomendados recomendados recomendados"
+      ". . . .";
+  }
+}
