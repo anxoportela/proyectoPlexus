@@ -1,13 +1,37 @@
-<h2>Ofertas</h2>
-<div class="grid-wrapper">
-<div class="card text-center">
-    <img class="card-img-top" src="https://via.placeholder.com/600x600?text=Oferta" alt="Card image">
-    <div class="card-header">
-        Título oferta
+<div class="container pr-5">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3 text-center">Ofertas</h3>
+    </div>
+    <!-- <div class="col-6 text-right">
+      <a class="btn btn-secondary mb-3 mr-1" href="#flechitas" role="button" data-slide="prev">
+        <fa-icon [icon]="icFi"></fa-icon>
+      </a>
+      <a class="btn btn-secondary mb-3 " href="#flechitas" role="button" data-slide="next">
+        <fa-icon [icon]="icFd"></fa-icon>
+      </a>
+    </div> -->
+    <div class="col-12">
+      <div id="flechitas" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" (ngModel)="Datos">
+          <div class="carousel-item" *ngFor="let salida of Datos; let first = first" [ngClass]="{'active': first}">
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <div class="card">
+                  <img class="img-fluid" alt="100%x280" [src]="salida.imagen">
+                  <div class="card-body">
+                    <h4 class="card-title">{{salida.titulo}}</h4>
+                    <p class="card-text">{{salida.descripcion}}</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Añadido: {{salida.anadido}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    <div class="card-body">
-      <p class="card-text">Descripción de la oferta.</p>
-      <a href="#" class="btn btn-secondary stretched-link">Visitar</a>
     </div>
   </div>
 </div>
