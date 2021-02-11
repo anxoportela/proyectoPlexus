@@ -13,11 +13,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: InicioComponent },
   { path: 'alojamientos', component: AlojamientosComponent },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'register-user', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
+  { path: 'login', component: SignInComponent },
+  { path: 'registro', component: SignUpComponent },
+  { path: 'cpanel', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'recuperar', component: ForgotPasswordComponent },
+  { path: 'verificar', component: VerifyEmailComponent }
 ];
 
 @NgModule({
