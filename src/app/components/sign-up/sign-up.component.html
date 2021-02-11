@@ -2,37 +2,32 @@
 <app-header></app-header>
 
 <!-- main -->
-<div class="displayTable">
-  <div class="displayTableCell">
-
-    <div class="authBlock">
-      <h3>Register User</h3>
-
-      <div class="formGroup">
-        <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+<div class="container mt-5" style="max-width: 600px">
+  <div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Registro de usuarios</h3>
+        <div class="formGroup">
+          <input type="email" class="form-control form-control-sm" placeholder="Correo electrónico" #userEmail required>
+        </div>
+        <div class="formGroup">
+          <input type="password" class="form-control form-control-sm mt-2" placeholder="Contraseña" #userPwd required>
+        </div>
+        <div class="formGroup">
+          <input type="button" class="btn btn-block btn-primary btn-sm mt-2" value="Registrarse"
+            (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        </div>
+        <div class="formGroup">
+          <button type="button" class="btn btn-block btn-danger btn-sm mt-2" (click)="authService.GoogleAuth()">
+            Iniciar sesión con Google
+          </button>
+        </div>
       </div>
-
-      <div class="formGroup">
-        <input type="password" class="form-control" placeholder="Password" #userPwd required>
+      <div class="redirectToLogin mt-2">
+        <span>¿Ya estás registrado? <span class="redirect" routerLink="/login">Inicia sesión aquí</span></span>
       </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btn-block btn-primary" value="Sign Up"
-          (click)="authService.SignUp(userEmail.value, userPwd.value)">
-      </div>
-
-      <div class="formGroup">
-        <button type="button" class="btn btn-block btn-danger" (click)="authService.GoogleAuth()">
-          Continue with Google
-        </button>
-      </div>
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
     </div>
   </div>
-
 </div>
 
 <!-- footer -->
