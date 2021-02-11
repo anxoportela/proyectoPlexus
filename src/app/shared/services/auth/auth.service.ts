@@ -36,7 +36,7 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['cpanel']);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -59,7 +59,7 @@ export class AuthService {
   SendVerificationMail() {
     return this.afAuth.currentUser.then( u => u.sendEmailVerification())
     .then(() => {
-      this.router.navigate(['verify-email-address']);
+      this.router.navigate(['verificar']);
     })
   }
 
@@ -67,7 +67,7 @@ export class AuthService {
   ForgotPassword(passwordResetEmail) {
     return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
     .then(() => {
-      window.alert('Password reset email sent, check your inbox.');
+      window.alert('Se ha reseteado tu contraseña, revisa tu correo.');
     }).catch((error) => {
       window.alert(error)
     })
@@ -89,7 +89,7 @@ export class AuthService {
     return this.afAuth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['cpanel']);
         })
       this.SetUserData(result.user);
     }).catch((error) => {
@@ -105,7 +105,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
     }
     return userRef.set(userData, {
       merge: true
@@ -116,7 +116,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     })
   }
 
