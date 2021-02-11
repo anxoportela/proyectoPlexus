@@ -2,39 +2,35 @@
 <app-header></app-header>
 
 <!-- main -->
-<div class="displayTable">
-  <div class="displayTableCell">
-
-    <div class="authBlock">
-      <h3>Signin</h3>
-      <div class="formGroup">
-        <input type="text" class="form-control" placeholder="Username" #userName required>
+<div class="container mt-5" style="max-width: 600px">
+  <div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Inicio de sesión</h3>
+        <div class="formGroup">
+          <input type="text" class="form-control form-control-sm" placeholder="Correo eléctronico" #userName required>
+        </div>
+        <div class="formGroup">
+          <input type="password" class="form-control form-control-sm mt-2" placeholder="Contraseña" #userPassword
+            required>
+        </div>
+        <div class="formGroup">
+          <input type="button" class="btn btn-primary btn-sm btn-block mt-2" value="Iniciar sesión"
+            (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
+        <div class="formGroup">
+          <button type="button" class="btn btn-danger btn-sm btn-block mt-2" (click)="authService.GoogleAuth()">
+            Iniciar sesión con Google
+          </button>
+        </div>
+        <div class="forgotPassword mt-2">
+          <span routerLink="/recuperar">¿Olvidaste tu contraseña?</span>
+        </div>
       </div>
-
-      <div class="formGroup">
-        <input type="password" class="form-control mt-2" placeholder="Password" #userPassword required>
-      </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btn-primary btn-block mt-2" value="Sign in"
-          (click)="authService.SignIn(userName.value, userPassword.value)">
-      </div>
-
-      <div class="formGroup">
-        <button type="button" class="btn btn-danger btn-block mt-2" (click)="authService.GoogleAuth()">
-          Log in with Google
-        </button>
-      </div>
-
-      <div class="forgotPassword mt-2">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+      <div class="redirectToLogin mt-1">
+        <span>¿No estás registrado todavía?<span class="redirect" routerLink="/registro"> Registrate aquí</span></span>
       </div>
     </div>
-
-    <div class="redirectToLogin mt-1">
-      <span>Not registered yet?<span class="redirect" routerLink="/register-user"> Register</span></span>
-    </div>
-
   </div>
 </div>
 
