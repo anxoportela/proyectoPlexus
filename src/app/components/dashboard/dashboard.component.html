@@ -3,23 +3,34 @@
 
 <!-- main -->
 <div class="container mt-5" style="max-width: 600px">
-
-  <div class="row" *ngIf="authService.userData as user">
-    <div class="media">
-      <img class="align-self-start mr-5 img-fluid rounded-circle"
-        src="{{(user.photoURL) ? user.photoURL : '/assets/img/dummy.png'}}" alt="{{user.displayName}}">
-      <div class="media-body">
-        <h2>Hi: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h2>
-        <p>User ID: <strong>{{user.uid}}</strong></p>
-        <p>Email: <strong>{{user.email}}</strong></p>
+  <div class="displayTable">
+    <div class="displayTableCell">
+      <div class="editBlock" *ngIf="authService.userData as user">
+        <div class="form-group">
+          <img src="{{(user.photoURL) ? user.photoURL : '/assets/img/dummy.png'}}" class="rounded mx-auto d-block"
+            alt="Imagen Perfil">
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm"
+            placeholder="{{(user.displayName) ? user.displayName : 'Nombre Usuario'}}" type="text" #nombre>
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" placeholder="{{user.email}}" type="text" readonly>
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm" placeholder="Contraseña" type="password" #password>
+        </div>
+        <div class="form-group">
+          <input class="form-control form-control-sm"
+            placeholder="{{(user.photoURL) ? user.photoURL : 'URL imagen de usuario'}}" type="text" #imgUrl>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-sm btn-block">Guardar datos</button>
+          <button class="btn btn-danger btn-sm btn-block" (click)="authService.SignOut()">Salir</button>
+        </div>
       </div>
     </div>
   </div>
-
-  <a class="btn btn-block btn-primary" (click)="authService.SignOut()">
-    Sign Out
-  </a>
-
 </div>
 
 <!-- footer -->
