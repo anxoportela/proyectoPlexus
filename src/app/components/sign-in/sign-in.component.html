@@ -14,21 +14,19 @@
           <input type="password" class="form-control form-control-sm mt-2" placeholder="Contraseña" #userPassword
             required>
         </div>
-        <div class="formGroup">
-          <input type="button" class="btn btn-primary btn-sm btn-block mt-2" value="Iniciar sesión"
+        <div class="formGroup d-flex justify-content-sm-center">
+          <input type="button" class="btn btn-primary btn-block btn-sm mt-2 mr-1" value="Iniciar sesión"
             (click)="authService.SignIn(userName.value, userPassword.value)">
+            <button type="button" class="btn btn-secondary btn-block btn-sm ml-1 mt-2" (click)="authService.GoogleAuth()">
+              Iniciar sesión con Google
+            </button>
         </div>
-        <div class="formGroup">
-          <button type="button" class="btn btn-danger btn-sm btn-block mt-2" (click)="authService.GoogleAuth()">
-            Iniciar sesión con Google
-          </button>
-        </div>
-        <div class="forgotPassword mt-2">
+        <div class="forgotPassword mt-2 d-flex justify-content-end">
           <span routerLink="/recuperar">¿Olvidaste tu contraseña?</span>
         </div>
       </div>
-      <div class="redirectToLogin mt-1">
-        <span>¿No estás registrado todavía?<span class="redirect" routerLink="/registro"> Registrate aquí</span></span>
+      <div class="redirectToLogin mt-2 d-flex justify-content-end">
+        <span>¿No estás registrado todavía?<span class="redirect" routerLink="/registro"> Regístrate aquí</span></span>
       </div>
     </div>
   </div>
