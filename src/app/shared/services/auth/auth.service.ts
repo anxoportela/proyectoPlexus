@@ -93,7 +93,7 @@ export class AuthService {
         localStorage.setItem('user', JSON.stringify(result.user));
           this.router.navigate(['cpanel']);
         })
-      this.SetUserData(result.user);
+        this.SetUserData(result.user);
     }).catch((error) => {
       window.alert(error)
     })
@@ -108,6 +108,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      timestamp: (new Date()).toUTCString()
     }
     return userRef.set(userData, {
       merge: true
@@ -118,7 +119,6 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      //this.router.navigate(['login']);
     })
   }
 
