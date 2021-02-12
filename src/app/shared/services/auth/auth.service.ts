@@ -36,6 +36,7 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
+          localStorage.setItem('user', JSON.stringify(result.user));
           this.router.navigate(['cpanel']);
         });
         this.SetUserData(result.user);
@@ -89,6 +90,7 @@ export class AuthService {
     return this.afAuth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
+        localStorage.setItem('user', JSON.stringify(result.user));
           this.router.navigate(['cpanel']);
         })
       this.SetUserData(result.user);
