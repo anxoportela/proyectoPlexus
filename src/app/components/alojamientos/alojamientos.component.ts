@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import datosEjemplo from '../../../assets/data.json';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-alojamientos',
@@ -7,9 +7,41 @@ import datosEjemplo from '../../../assets/data.json';
   styleUrls: ['./alojamientos.component.css'],
 })
 export class AlojamientosComponent implements OnInit {
-  Datos: any = datosEjemplo;
+  DatoUnico: any = null;
+  Datos: any = null;
 
-  constructor() {}
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {}
+  localUrl = 'http://localhost:8080';
+
+  ngOnInit(): void {
+
+    this.getAlojamientos();
+
+  }
+
+  getAlojamiento() {
+    return this.http.get(this.localUrl + "/alojamientos");
+  }
+
+  getAlojamientoById(id: number | undefined) {
+    if (id != undefined) {
+      this.http.get(this.localUrl + "/alojamientos/" + id).subscribe(data => {
+        if (data != null && data != undefined) {
+          this.DatoUnico = data;
+          console.log(this.DatoUnico)
+        }
+      });
+    }
+  }
+
+  getAlojamientos() {
+    this.getAlojamiento()
+      .subscribe(data => {
+        if (data != null && data != undefined) {
+          this.Datos = data;
+        }
+      });
+  }
+
 }
